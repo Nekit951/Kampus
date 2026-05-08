@@ -1,0 +1,134 @@
+{
+  "Category": [
+    {
+      "id": 0,
+      "title": "Все"
+    },
+    {
+      "id": 1,
+      "title": "Письменные"
+    },
+    {
+      "id": 2,
+      "title": "Бумага"
+    },
+    {
+      "id": 3,
+      "title": "Папки"
+    },
+    {
+      "id": 4,
+      "title": "Настольные"
+    },
+    {
+      "id": 5,
+      "title": "Инструменты"
+    },
+    {
+      "id": 6,
+      "title": "Настольные"
+    },
+    {
+      "id": 7,
+      "title": "Школьные"
+    }
+  ],
+  "Items": [
+    {
+      "id": 1,
+      "title": "Ручка шариковая (синяя)",
+      "category": "Письменные",
+      "quantity": 150,
+      "price": 25.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/418e2789-ac3e-4e30-97cc-3bf18bde61fd/pen.png"
+    },
+    {
+      "id": 2,
+      "title": "Карандаш",
+      "category": "Письменные",
+      "quantity": 90,
+      "price": 80.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/192cf3cc-5b7b-4ac2-86b9-4ca5bc0f41b7/pencil.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Бумага A4",
+      "category": "Бумага",
+      "quantity": 65,
+      "price": 150.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/450e6180-b292-40aa-b2aa-92c9299ad956/paper.png"
+    },
+    {
+      "id": 4,
+      "title": "Ежедневник датированный",
+      "category": "Бумага",
+      "quantity": 55,
+      "price": 100.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/5300904a-ae07-4e14-919d-19fe893e704f/diary.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Папка-регистратор (75мм)",
+      "category": "Папки",
+      "quantity": 80,
+      "price": 90.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/abfcfdc5-d95f-40a5-8277-3b8e93bb81e3/package.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Файлы-вкладыши",
+      "category": "Папки - Архивация",
+      "quantity": 50,
+      "price": 120.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/45e65c42-4451-4d0a-8e4b-d78ae052b8af/orig.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Степлер №10",
+      "category": "Настольные",
+      "quantity": 30,
+      "price": 160.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/2dbbd61d-b7a4-4ab7-9cee-31c2e3660438/stepler.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Дырокол",
+      "category": "Настольные",
+      "quantity": 20,
+      "price": 350.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/960d0127-00f9-48db-abf2-2fad0b170e64/dyrokol.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Ножницы канцелярские",
+      "category": "Инструменты",
+      "quantity": 35,
+      "price": 120.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/f9e610bb-1699-4544-b7bc-66b23118b997/scissors.png"
+    },
+    {
+      "id": 10,
+      "title": "Точилка с контейнером",
+      "category": "Инструменты",
+      "quantity": 60,
+      "price": 45.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/b5fce2a2-b2a5-44b6-addc-7d67601594b0/sharpener.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Дневник школьный",
+      "category": "Школьные",
+      "quantity": 100,
+      "price": 150.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/3cba65a2-0f9d-4dda-9564-1899c5e6a135/school.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Пенал (1 отделение)",
+      "category": "Школьные",
+      "quantity": 25,
+      "price": 320.0,
+      "picUrl": "https://39elzm89jy.ucarecd.net/04f878dd-6389-4537-9c02-3301fce31d43/penal.png"
+    }
+  ]
+}
