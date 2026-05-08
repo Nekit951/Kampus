@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AccountOptionsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Кампус"
+        android:textColor="#0000FF"
+        android:textSize="20sp"
+        android:layout_marginTop="240dp"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Всё, что здесь есть, всё это есть"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:alpha="0.7"
+        android:layout_marginTop="290dp"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:id="@+id/btnReg"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#0000FF"
+        android:text="Регистрация"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="420dp"/>
+
+    <Button
+        android:id="@+id/btnLog"
+        android:layout_width="330dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#A9A9A9"
+        android:text="Войти"
+        android:textSize="20sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="490dp"/>
+
+</FrameLayout>
