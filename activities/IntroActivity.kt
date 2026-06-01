@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.kampus2.R
 
 class IntroActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -18,10 +17,19 @@ class IntroActivity : AppCompatActivity() {
         val intro = 2500L
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, AccountOptionsActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, intro)
+            val sharedPrefs = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+            val isLoggedIn = sharedPrefs.getBoolean("isLoggedIn", false)
 
+            if(isLoggedIn){
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+            else{
+                val intent = Intent(this, AccountOptionsActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }, intro)
     }
 }
