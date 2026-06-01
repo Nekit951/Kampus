@@ -1,0 +1,51 @@
+package com.example.myapplication.activities
+
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
+
+class DataNumberText(private val editText: EditText): TextWatcher {
+
+    private val slash = '/'
+
+    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+    override fun afterTextChanged(s: Editable?) {
+        if (s == null) return
+
+        editText.removeTextChangedListener(this)
+
+        // Очищаем строку от слэшей
+        var clean = s.toString().replace(slash.toString(), "")
+
+        // Валидация первой цифры месяца (только 0 или 1)
+        if (clean.isNotEmpty() && clean[0] !in '0'..'1') {
+            clean = ""
+        }
+        // Валидация второй цифры месяца (если первая 1, то вторая не больше 2)
+        if (clean.length >= 2) {
+            val month = clean.substring(0, 2).toIntOrNull() ?: 0
+            if (month > 12 || month == 0) {
+                clean = clean.substring(0, 1)
+            }
+        }
+
+        // Ограничение длины (4 цифры: 2 на месяц, 2 на год)
+        val filtered = if (clean.length > 4) clean.substring(0, 4) else clean
+
+        val sb = StringBuilder()
+        for (i in filtered.indices) {
+            sb.append(filtered[i])
+            if (i == 1 && filtered.length > 2) {
+                sb.append(slash)
+            }
+        }
+
+        val result = sb.toString()
+        editText.setText(result)
+        editText.setSelection(result.length)
+
+        editText.addTextChangedListener(this)
+    }
+}
