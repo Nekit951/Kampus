@@ -1,23 +1,14 @@
-package com.example.kampus2.activities
+package com.example.myapplication.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.kampus2.activities.CartActivity
-import com.example.kampus2.activities.OrderActivity
-import com.example.kampus2.activities.ProfileActivity
-import com.example.kampus2.R
-import com.example.kampus2.model.Card
-import com.example.kampus2.model.CardDB
-import com.example.kampus2.databinding.ActivityCardAddBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
+import com.example.myapplication.R
+import com.example.myapplication.databinding.ActivityCardAddBinding
+import com.example.myapplication.model.Card
+import com.example.myapplication.model.CardDB
 
 class CardAddActivity : AppCompatActivity() {
 
@@ -33,8 +24,17 @@ class CardAddActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
+        setUp()
         buttonAdd()
         bottom()
+    }
+
+    private fun setUp(){
+        binding.etNumber.inputType = android.text.InputType.TYPE_CLASS_NUMBER
+        binding.etData.inputType = android.text.InputType.TYPE_CLASS_NUMBER
+
+        binding.etNumber.addTextChangedListener(CardNumberText(binding.etNumber))
+        binding.etData.addTextChangedListener(DataNumberText(binding.etData))
     }
 
     private fun buttonAdd() {
@@ -43,13 +43,24 @@ class CardAddActivity : AppCompatActivity() {
             val data = binding.etData.text.toString().trim()
             val cvp = binding.etCVP.text.toString().trim()
 
+
             if(number == "" || data == "" || cvp == ""){
                 Toast.makeText(this, "Заполните поля", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
-            if(number.length > 16){
+            if(number.length != 19){
                 Toast.makeText(this, "Неверный номер карты", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            if(data.length != 5){
+                Toast.makeText(this, "Неверный формат даты", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
+            if(cvp.length != 3){
+                Toast.makeText(this, "Неверный формат CVP", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
@@ -63,7 +74,6 @@ class CardAddActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
 
     private fun bottom() {
@@ -105,5 +115,4 @@ class CardAddActivity : AppCompatActivity() {
             }
         }
     }
-
 }
