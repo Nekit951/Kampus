@@ -123,9 +123,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bottom() {
-        val sharedPrefs = getSharedPreferences("UserPrefs", MODE_PRIVATE)
-        val isLoggedIn = sharedPrefs.getBoolean("isLoggedIn", false)
-
         binding.bottomNav.setOnItemSelectedListener{ menuItem ->
             when(menuItem.itemId){
                 R.id.nav_home -> true
@@ -147,17 +144,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_profile -> {
-                    if(isLoggedIn){
-                        if(this !is ProfileActivity){
-                            val intent = Intent(this, ProfileActivity::class.java)
-                            startActivity(intent)
-                        }
-                    }
-                    else{
-                        if(this !is RegisterActivity){
-                            val intent = Intent(this, RegisterActivity::class.java)
-                            startActivity(intent)
-                        }
+                    if(this !is ProfileActivity){
+                        val intent = Intent(this, ProfileActivity::class.java)
+                        startActivity(intent)
                     }
                     true
                 }
